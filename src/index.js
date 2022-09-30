@@ -6,12 +6,16 @@ import 'tachyons';
 import App from './containers/App';
 import {Provider} from 'react-redux';
 import {legacy_createStore} from 'redux';
-import { searchRobots } from './reducers';
+import { searchRobots, requestRobots} from './reducers';
 import { createLogger} from 'redux-logger';
 import { applyMiddleware } from 'redux';
+import ThunkMiddleware from 'redux-thunk';
+import { combineReducers } from 'redux';
 
 const logger = createLogger();
-const store = legacy_createStore(searchRobots, applyMiddleware(logger));
+
+const rootReducer = combineReducers({searchRobots, requestRobots})
+const store = legacy_createStore(rootReducer, applyMiddleware(ThunkMiddleware, logger));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
