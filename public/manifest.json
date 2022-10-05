@@ -3,8 +3,8 @@
   "name": "RoboFriendsApp",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "48x48",
+      "src": "favicona.ico",
+      "sizes": "64x64 48x48",
       "type": "image/x-icon",
       "purpose": "maskable"
     },
